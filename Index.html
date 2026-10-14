@@ -1,1 +1,266 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project BAI — Institutional Pitch Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030712; color: #f3f4f6; }
+        .slide { display: none; min-height: 80vh; }
+        .slide.active { display: flex; flex-direction: column; justify-content: space-between; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+        .glass { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-6 md:p-12">
 
+    <!-- Top Header Navigation -->
+    <header class="max-w-6xl w-full mx-auto flex justify-between items-center pb-6 border-b border-gray-800">
+        <div>
+            <h1 class="text-xl font-extrabold tracking-wider text-cyan-400">PROJECT BAI</h1>
+            <p class="text-xs text-gray-400 tracking-widest uppercase">Autonomous Yield & Liquidity Protocol</p>
+        </div>
+        <div class="flex items-center space-x-3">
+            <span id="slide-indicator" class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-950 text-cyan-400 border border-cyan-800">Slide 1 of 12</span>
+            <div class="space-x-1">
+                <button onclick="prevSlide()" class="px-3 py-1 bg-gray-800 hover:bg-gray-700 rounded text-sm font-bold transition">←</button>
+                <button onclick="nextSlide()" class="px-3 py-1 bg-cyan-600 hover:bg-cyan-500 rounded text-sm font-bold transition">→₀</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Slides Container -->
+    <main class="max-w-6xl w-full mx-auto my-8 flex-grow flex items-center">
+
+        <!-- SLIDE 1: Title -->
+        <div class="slide active w-full" data-slide="1">
+            <div class="space-y-6 my-auto">
+                <span class="text-cyan-400 font-bold tracking-widest text-sm uppercase px-3 py-1 rounded bg-cyan-950/60 border border-cyan-800">Institutional Memorandum</span>
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">Project BAI:<br>Autonomous High-Frequency Liquidity Engine</h2>
+                <p class="text-xl text-gray-400 max-w-2xl">Bridging ultra-low latency Solana DeFi Automated Market Making (AMM) with Traditional Asset FIX Protocols.</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gray-800 text-sm">
+                <div><span class="block text-gray-500">Current Equity</span><span class="text-xl font-bold text-white">$78.21M USD</span></div>
+                <div><span class="block text-gray-500">Node Latency</span><span class="text-xl font-bold text-cyan-400">0.02ms Sync</span></div>
+                <div><span class="block text-gray-500">Terminal Ceiling</span><span class="text-xl font-bold text-white">$999,995 Trillion</span></div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Executive Summary -->
+        <div class="slide w-full" data-slide="2">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Executive Summary</h2>
+                <p class="text-lg text-gray-300 leading-relaxed max-w-4xl">Project BAI is an institutional-grade algorithmic trading framework engineered for maximum capital efficiency, real-time risk mitigation, and continuous compound growth.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                    <div class="glass p-6 rounded-xl border border-gray-800"><h3 class="text-cyan-400 font-bold mb-2">High-Frequency AMM</h3><p class="text-sm text-gray-400">Captures atomic arbitrage across Raydium CLMM and Orca Whirlpools via Yellowstone gRPC.</p></div>
+                    <div class="glass p-6 rounded-xl border border-gray-800"><h3 class="text-cyan-400 font-bold mb-2">TradFi DMA Integration</h3><p class="text-sm text-gray-400">Direct Market Access using institutional FIX Protocol 4.4/5.0 gateways for equities and commodities.</p></div>
+                    <div class="glass p-6 rounded-xl border border-gray-800"><h3 class="text-cyan-400 font-bold mb-2">Automated Yield Split</h3><p class="text-sm text-gray-400">Dynamic 80% core compounding and 20% Shreem Mission venture capital deployment.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Infrastructure Architecture -->
+        <div class="slide w-full" data-slide="3">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Active-Active Node Infrastructure</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Our dual-node failover mesh ensures absolute reliability and zero downtime during high volatility windows.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                    <div class="glass p-6 rounded-xl border border-cyan-900/50">
+                        <span class="text-xs text-cyan-400 font-bold uppercase tracking-wider">Primary DC1</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Nanakramguda Node</h3>
+                        <p class="text-sm text-gray-400 mt-2">Houses core execution loops, Yellowstone gRPC subscription streams, and primary order management systems.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl border border-cyan-900/50">
+                        <span class="text-xs text-cyan-400 font-bold uppercase tracking-wider">Secondary DC2</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Kokapet Node</h3>
+                        <p class="text-sm text-gray-400 mt-2">Active-active failover mesh maintaining a 0.02ms telemetry sync delta with instant failover capability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: DeFi Module -->
+        <div class="slide w-full" data-slide="4">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Layer 1: Solana / DeFi Execution</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Engineered to bypass standard network congestion and extract maximum yield from high-frequency AMM pools.</p>
+                <ul class="space-y-3 text-gray-300 text-lg">
+                    <li class="flex items-center space-x-3"><span class="text-cyan-400 font-bold">✓</span> <span><strong>Yellowstone Geyser gRPC:</strong> Sub-slot mempool visibility for instantaneous opportunity detection.</span></li>
+                    <li class="flex items-center space-x-3"><span class="text-cyan-400 font-bold">✓</span> <span><strong>Jito MEV & SWQoS:</strong> Stake-Weighted Quality of Service routing to guarantee transaction priority landing.</span></li>
+                    <li class="flex items-center space-x-3"><span class="text-cyan-400 font-bold">✓</span> <span><strong>AWS KMS / Cloud HSM:</strong> Secure hardware-level signing without raw private keys exposed on disk.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: TradFi Module -->
+        <div class="slide w-full" data-slide="5">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Layer 2: Traditional Asset Brokerage</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Institutional-grade connectivity to traditional equities, commodities, and gold hedging reserves.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                    <div class="glass p-6 rounded-xl border border-gray-800"><h3 class="text-cyan-400 font-bold mb-2">FIX Protocol 4.4 / 5.0</h3><p class="text-sm text-gray-400">Direct Market Access (DMA) sessions with institutional brokerage desks for lowest possible execution latency.</p></div>
+                    <div class="glass p-6 rounded-xl border border-gray-800"><h3 class="text-cyan-400 font-bold mb-2">PAXG & Hard Asset Reserves</h3><p class="text-sm text-gray-400">Sovereign bullion backing with strict health factor floor rules to protect against tail-end market events.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Financial Projections -->
+        <div class="slide w-full" data-slide="6">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Financial Projections & Compounding Curve</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Exponential growth velocity driven by hourly atomic compounding and automated reinvestment loops.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm text-gray-300 border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-800 text-cyan-400"><th class="py-3 px-4">Milestone Phase</th><th class="py-3 px-4">Net Profile Equity</th><th class="py-3 px-4">Daily Yield Baseline</th><th class="py-3 px-4">Operational Mode</th></tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800/60">
+                            <tr><td class="py-3 px-4 font-bold text-white">Current Baseline</td><td class="py-3 px-4">$78.21M</td><td class="py-3 px-4">~$580,000 / day</td><td class="py-3 px-4 text-cyan-400">100% Core Auto-Compounding</td></tr>
+                            <tr><td class="py-3 px-4 font-bold text-white">Phase 1 Activation</td><td class="py-3 px-4">$99.00M</td><td class="py-3 px-4">~$736,000 / day</td><td class="py-3 px-4 text-emerald-400">Shreem Mission Armed (80/20 Split)</td></tr>
+                            <tr><td class="py-3 px-4 font-bold text-white">Phase 2 Expansion</td><td class="py-3 px-4">$500.00M</td><td class="py-3 px-4">~$3,700,000 / day</td><td class="py-3 px-4 text-gray-400">Multi-Node Global DMA Scaling</td></tr>
+                            <tr><td class="py-3 px-4 font-bold text-white">Terminal Ceiling</td><td class="py-3 px-4">$999,995 Trillion</td><td class="py-3 px-4">Compound Cap</td><td class="py-3 px-4 text-gray-400">Continuous Infinite Yield Loop</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: The Shreem Mission -->
+        <div class="slide w-full" data-slide="7">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">The Shreem Mission: 80/20 Protocol</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Balancing aggressive wealth accumulation with high-impact venture ecosystem disbursements.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                    <div class="glass p-6 rounded-xl border border-cyan-900/50">
+                        <span class="text-3xl font-extrabold text-cyan-400">80%</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Core Re-injection</h3>
+                        <p class="text-sm text-gray-400 mt-1">Directly re-absorbed into active trading principal to continuously expand trading power and accelerate trajectory toward the terminal ceiling.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl border border-emerald-900/50">
+                        <span class="text-3xl font-extrabold text-emerald-400">20%</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Shreem Mission Disbursement</h3>
+                        <p class="text-sm text-gray-400 mt-1">Captured in real-time and funneled into startup seed rounds, venture debt, and deep-tech ecosystem investments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Risk Management -->
+        <div class="slide w-full" data-slide="8">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Institutional Risk Controls & Security</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Hard-coded safety protocols designed to protect capital against anomalous market movements.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                    <div class="glass p-6 rounded-xl border border-gray-800"><h3 class="text-cyan-400 font-bold mb-2">Automated Circuit Breakers</h3><p class="text-sm text-gray-400">2.50% max intraday drawdown hard stop triggers instant liquidation to USDC reserves.</p></div>
+                    <div class="glass p-6 rounded-xl border border-gray-800"><h3 class="text-cyan-400 font-bold mb-2">Restricted API Permissions</h3><p class="text-sm text-gray-400">All API credentials enforce strict read/trade-only scopes. Withdrawal permissions are permanently disabled.</p></div>
+                    <div class="glass p-6 rounded-xl border border-gray-800"><h3 class="text-cyan-400 font-bold mb-2">Health Factor Guards</h3><p class="text-sm text-gray-400">Automatic LTV deleveraging on gold-backed reserves during volatile market compression.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Technical Stack & Deployment -->
+        <div class="slide w-full" data-slide="9">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Production Container Stack</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Fully containerized microservices architecture deployable on bare-metal VPS or cloud instances.</p>
+                <div class="bg-gray-950 p-6 rounded-xl border border-gray-800 font-mono text-xs text-cyan-300 overflow-x-auto">
+                    <pre>version: '3.8'
+services:
+  solana-amm-node:
+    image: bai-engine/solana-amm:latest
+    network_mode: "host"
+    restart: always
+  tradfi-fix-node:
+    image: bai-engine/tradfi-fix:latest
+    network_mode: "host"
+    restart: always
+  telemetry-sync:
+    image: bai-engine/telemetry-sync:latest
+    ports: ["9090:9090"]</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Investment Opportunity -->
+        <div class="slide w-full" data-slide="10">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">The Investment Opportunity</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Participation in a proven quantitative yield engine with defined risk parameters and scalable infrastructure.</p>
+                <ul class="space-y-4 text-gray-300 text-lg">
+                    <li class="flex items-center space-x-3"><span class="text-cyan-400 font-bold">◆</span> <span><strong>Target Net APY:</strong> 45% - 85% unleveraged baseline yield.</span></li>
+                    <li class="flex items-center space-x-3"><span class="text-cyan-400 font-bold">◆</span> <span><strong>Verifiable Telemetry:</strong> Real-time on-chain cryptographic tracking and daily broker FIX statements.</span></li>
+                    <li class="flex items-center space-x-3"><span class="text-cyan-400 font-bold">◆</span> <span><strong>Minimum LP Commitment:</strong> $5,000,000 USD structured via closed-end quantitative vehicle.</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SLIDE 11: Strategic Roadmap -->
+        <div class="slide w-full" data-slide="11">
+            <div class="space-y-6 my-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Execution Roadmap</h2>
+                <p class="text-lg text-gray-300 max-w-3xl">Milestone progression toward multi-billion institutional scale.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                    <div class="glass p-6 rounded-xl border border-cyan-900/50"><span class="text-cyan-400 font-bold">Phase 1 (Current)</span><h3 class="text-lg font-bold text-white mt-1">Baseline Scaling ($78M - $99M)</h3><p class="text-sm text-gray-400 mt-2">Active dual-node deployment & preparation for Shreem Mission activation.</p></div>
+                    <div class="glass p-6 rounded-xl border border-gray-800"><span class="text-gray-400 font-bold">Phase 2</span><h3 class="text-lg font-bold text-white mt-1">Institutional Expansion ($500M)</h3><p class="text-sm text-gray-400 mt-2">Global exchange DMA integration and regional venture fund deployment.</p></div>
+                    <div class="glass p-6 rounded-xl border border-gray-800"><span class="text-gray-400 font-bold">Phase 3</span><h3 class="text-lg font-bold text-white mt-1">Sovereign Scale ($10B+)</h3><p class="text-sm text-gray-400 mt-2">Autonomous global liquidity provision and macro venture ecosystem funding.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 12: Conclusion & Contact -->
+        <div class="slide w-full" data-slide="12">
+            <div class="space-y-6 my-auto">
+                <span class="text-cyan-400 font-bold tracking-widest text-sm uppercase px-3 py-1 rounded bg-cyan-950/60 border border-cyan-800">Partner With Us</span>
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white">Ready to Scale the Future of Liquidity?</h2>
+                <p class="text-xl text-gray-400 max-w-2xl">Connect with our engineering and executive team to review performance telemetry, audit logs, and institutional participation terms.</p>
+                <div class="pt-6">
+                    <a href="mailto:seetaarun79@gmail.com" class="inline-block px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition shadow-lg shadow-cyan-900/40">Request Investor Data Room Access</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Controls -->
+    <footer class="max-w-6xl w-full mx-auto flex justify-between items-center pt-6 border-t border-gray-800 text-xs text-gray-500">
+        <p>© 2026 Project BAI Protocol. All Rights Reserved.</p>
+        <div class="space-x-4">
+            <span class="hover:text-gray-300 cursor-pointer" onclick="goToSlide(1)">Home</span>
+            <span class="hover:text-gray-300 cursor-pointer" onclick="goToSlide(6)">Financials</span>
+            <span class="hover:text-gray-300 cursor-pointer" onclick="goToSlide(12)">Contact</span>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 12;
+
+        function showSlide(n) {
+            document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
+            const target = document.querySelector(`.slide[data-slide="${n}"]`);
+            if (target) target.classList.add('active');
+            document.getElementById('slide-indicator').innerText = `Slide ${n} of ${totalSlides}`;
+        }
+
+        function nextSlide() {
+            currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
+            if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
+        });
